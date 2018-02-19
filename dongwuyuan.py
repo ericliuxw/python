@@ -13,7 +13,21 @@ class laohu6(object):
         return 0
     def getMingzi(self):
         return self.__mingzi
-
+class laoying6(object):
+    def __init__(self,mingzi,zhuazi,yanjing,chibang):
+        self.__mingzi=mingzi
+        self.__zhuazi=zhuazi
+        self.__yanjing=yanjing
+        self.__chibang=chibang
+    def run(self):
+         print('fei')
+         return 0
+    def eat(self):
+        print('chi')
+        return 0
+    def getMingzi(self):
+        return self.__mingzi
+    
 class dongwu(object):
     '''这是一类动物'''
     count=0#动物个数
