@@ -2,9 +2,9 @@
 class laohu6(object):
     def __init__(self,mingzi,zhuazi,yanjing,weiba):
         self.__mingzi=mingzi
-        self.zhuazi=zhuazi
-        self.yanjing=yanjing
-        self.weiba=weiba
+        self.__zhuazi=zhuazi
+        self.__yanjing=yanjing
+        self.__weiba=weiba
     def run(self):
          print('pao')
          return 0
@@ -19,8 +19,8 @@ class dongwu(object):
     count=0#动物个数
     def __init__(self,mingzi,zhuazi,yanjing):
         self.__mingzi=mingzi
-        self.zhuazi=zhuazi
-        self.yanjing=yanjing
+        self.__zhuazi=zhuazi
+        self.__yanjing=yanjing
         dongwu.count=dongwu.count+1#动物计数器
     def run(self):
          print('pao')
@@ -46,7 +46,7 @@ class laoying(dongwu):
     '''这是一类老鹰'''
     def __init__(self,mingzi,zhuazi,yanjing,chibang):
         super(laoying,self).__init__(mingzi,zhuazi,yanjing)
-        self.chibang = chibang
+        self.__chibang = chibang
         laoying.count=laoying.count+1
     def run(self):
          print('fly 5 xia')
@@ -60,7 +60,7 @@ class laohu(dongwu):
     def __init__(self,mingzi,zhuazi,yanjing,weiba):
         '''初始化'''
         super(laohu,self).__init__(mingzi,zhuazi,yanjing)
-        self.weiba= weiba
+        self.__weiba= weiba
         laohu.count=laohu.count+1
     def run(self):
         print('pa 5 bu')
