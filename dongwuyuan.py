@@ -1,10 +1,9 @@
 # -*- coding: cp936 -*-
 class laohu6(object):
-    def __init__(self,mingzi,zhuazi,yanjing,weiba):
+    def __init__(self,mingzi,zhuazi,yanjing):
         self.__mingzi=mingzi
         self.__zhuazi=zhuazi
         self.__yanjing=yanjing
-        self.__weiba=weiba
     def run(self):
          print('pao')
          return 0
@@ -31,10 +30,11 @@ class laoying6(object):
 class dongwu(object):
     '''这是一类动物'''
     count=0#动物个数
-    def __init__(self,mingzi,zhuazi,yanjing):
+    def __init__(self,mingzi,zhuazi,yanjing,yanse='heise'):
         self.__mingzi=mingzi
         self.__zhuazi=zhuazi
         self.__yanjing=yanjing
+        self.yanse=yanse
         dongwu.count=dongwu.count+1#动物计数器
     def run(self):
          print('pao')
@@ -71,11 +71,10 @@ class laoying(dongwu):
     
 class laohu(dongwu):
     '''这是一类老虎'''
-    def __init__(self,mingzi,zhuazi,yanjing,weiba):
+    def __init__(self,mingzi,zhuazi,yanjing):
         '''初始化'''
         super(laohu,self).__init__(mingzi,zhuazi,yanjing)
-        self.__weiba= weiba
-        laohu.count=laohu.count+1
+        #laohu.count=laohu.count+1
     def run(self):
         print('pa 5 bu')
         return 0
@@ -94,24 +93,8 @@ class zoo(object):
 
 #单元测试
 if __name__ == '__main__':
-    x=laohu('hu',4,2,1)
-    print(x.run())
-    print(x.__dict__)
-    y=laoying('ying',2,2,1)
-    print y.getcnt()
-    x.plus()
-    print y.getcnt()
-    
-    z=laohu6('hu6',4,2)
-    print(z.run(),',hu6')
-
-    
-    print(dir(laohu))
-    print(help(laohu))
-    print(laohu.__doc__)
-    print(z.getMingzi())
-    #print(z.__mingzi)#私有变量
-    #print(z.__test())#私有函数方法
+    x=laohu('hu1',4,2)
+    y=laoying('ying',2,2,2)
 
     #多态
     zx=zoo()
@@ -119,3 +102,21 @@ if __name__ == '__main__':
     zx.add(y)
     zx.run()
     #print(laohu.__dict__)
+    
+
+
+    
+    z=laohu6('hu6',4,2)
+    print(z.run(),',hu6')
+    
+    print(x.run())
+    print(x.__dict__)
+    print y.getcnt()
+    x.plus()
+    print y.getcnt()
+    print(dir(laohu))
+    print(help(laohu))
+    print(laohu.__doc__)
+    print(z.getMingzi())
+    #print(z.__mingzi)#私有变量
+    #print(z.__test())#私有函数方法
